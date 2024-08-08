@@ -54,7 +54,28 @@
     <img class="full-image">
 </div>
     <!-- task 2 -->
+    <!-- Користувач вводить кількість елементів в input і натискає кнопку Створити, після чого рендериться колекція. 
+      При натисканні на кнопку Очистити, колекція елементів очищається.
+      Створи функцію createBoxes(amount), яка приймає 1 параметр amount — число. 
+      Функція створює стільки div, скільки вказано в amount і додає їх в div#boxes. -->
+
+      <!-- Розміри найпершого div — 30px на 30px
+        Кожен наступний div після першого, повинен бути ширше і вище попереднього на 10px -->
+
+    <div id="controls">
+
+      <input type="number" min="0" max="100" step="1" id="input"/>
+      <button type="button" data-action="render">Створити</button>
+      <button type="button" data-action="destroy">Очистити</button>
+      </div>
+      
+      <div id="boxes"></div>
 
     <script src="./index.js" type="module"></script>
   </body>
 </html>
+
+
+
+
+

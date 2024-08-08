@@ -52,3 +52,36 @@ function showNextImage() {
 }
 
 fullImageContainer.addEventListener("click", hideFullImage);
+
+// task 2
+
+const input = document.getElementById("input");
+const createBtn = document.querySelector('[data-action="render"]');
+const destroyBtn = document.querySelector('[data-action="destroy"]');
+const boxes = document.getElementById("boxes");
+
+function getRandomColor() {
+  const red = Math.floor(Math.random() * 255);
+  const green = Math.floor(Math.random() * 255);
+  const blue = Math.floor(Math.random() * 255);
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+
+function createBoxes(amount) {
+  let sizeDefault = 30;
+  for (let i = 0; i < amount; i += 1) {
+    const size = sizeDefault + 10 * i;
+    const color = getRandomColor();
+    boxes.innerHTML += `<div style="width:${size}px; height:${size}px; background-color:${color};"></div>`;
+  }
+}
+
+createBtn.addEventListener("click", () => {
+  createBoxes(input.value)
+});
+
+function destroyBoxes() {
+  boxes.innerHTML = "";
+}
+
+destroyBtn.addEventListener("click", destroyBoxes);
